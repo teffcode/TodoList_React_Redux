@@ -6,7 +6,7 @@ import { addTodo } from '../actions';
  * DISPATCH: Only way to make a change in the state
  */
 
-const AddTodo = ({ dispatch }) => {
+const AddTodo = () => {
   let input;
 
   return (
@@ -17,7 +17,7 @@ const AddTodo = ({ dispatch }) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(addTodo(input.value));
+          addTodo(input.value);
           input.value = '';
         }}
       >
@@ -28,10 +28,6 @@ const AddTodo = ({ dispatch }) => {
       </form>
     </div>
   );
-};
-
-AddTodo.propTypes = {
-  dispatch: PropTypes.func.isRequired,
 };
 
 /* 
